@@ -51,14 +51,15 @@
             btnExit = new Guna.UI2.WinForms.Guna2Button();
             btnMinisize = new Guna.UI2.WinForms.Guna2Button();
             panel1 = new Panel();
-            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            btnWarehouse = new Guna.UI2.WinForms.Guna2Button();
+            btnSp = new Guna.UI2.WinForms.Guna2Button();
             btnAccount = new Guna.UI2.WinForms.Guna2Button();
             btnTable = new Guna.UI2.WinForms.Guna2Button();
             btnFoodeCategory = new Guna.UI2.WinForms.Guna2Button();
             btnFood = new Guna.UI2.WinForms.Guna2Button();
             btnBill = new Guna.UI2.WinForms.Guna2Button();
             panel2 = new Panel();
+            uC_Spending1 = new Admin_Control.UC_Spending();
             uC_Account1 = new Admin_Control.UC_Account();
             uC_Table1 = new Admin_Control.UC_Table();
             uC_FoodCategory1 = new Admin_Control.UC_FoodCategory();
@@ -72,6 +73,9 @@
             label1 = new Label();
             guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2Elipse5 = new Guna.UI2.WinForms.Guna2Elipse(components);
+            guna2Elipse6 = new Guna.UI2.WinForms.Guna2Elipse(components);
+            guna2Elipse7 = new Guna.UI2.WinForms.Guna2Elipse(components);
+            uC_Warehouse1 = new Admin_Control.UC_Warehouse();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -118,8 +122,8 @@
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.Fixed3D;
-            panel1.Controls.Add(guna2Button2);
-            panel1.Controls.Add(guna2Button1);
+            panel1.Controls.Add(btnWarehouse);
+            panel1.Controls.Add(btnSp);
             panel1.Controls.Add(btnAccount);
             panel1.Controls.Add(btnTable);
             panel1.Controls.Add(btnFoodeCategory);
@@ -130,43 +134,45 @@
             panel1.Size = new Size(1131, 59);
             panel1.TabIndex = 3;
             // 
-            // guna2Button2
+            // btnWarehouse
             // 
-            guna2Button2.BackColor = Color.SeaShell;
-            guna2Button2.BorderRadius = 18;
-            guna2Button2.CustomizableEdges = customizableEdges5;
-            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button2.FillColor = Color.SandyBrown;
-            guna2Button2.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2Button2.ForeColor = Color.White;
-            guna2Button2.Location = new Point(955, 4);
-            guna2Button2.Name = "guna2Button2";
-            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2Button2.Size = new Size(159, 44);
-            guna2Button2.TabIndex = 6;
-            guna2Button2.Text = "Kho";
+            btnWarehouse.BackColor = Color.SeaShell;
+            btnWarehouse.BorderRadius = 18;
+            btnWarehouse.CustomizableEdges = customizableEdges5;
+            btnWarehouse.DisabledState.BorderColor = Color.DarkGray;
+            btnWarehouse.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnWarehouse.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnWarehouse.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnWarehouse.FillColor = Color.SandyBrown;
+            btnWarehouse.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnWarehouse.ForeColor = Color.White;
+            btnWarehouse.Location = new Point(955, 4);
+            btnWarehouse.Name = "btnWarehouse";
+            btnWarehouse.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnWarehouse.Size = new Size(159, 44);
+            btnWarehouse.TabIndex = 6;
+            btnWarehouse.Text = "Kho";
+            btnWarehouse.Click += btnWarehouse_Click;
             // 
-            // guna2Button1
+            // btnSp
             // 
-            guna2Button1.BackColor = Color.SeaShell;
-            guna2Button1.BorderRadius = 18;
-            guna2Button1.CustomizableEdges = customizableEdges7;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.SandyBrown;
-            guna2Button1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(797, 5);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2Button1.Size = new Size(151, 44);
-            guna2Button1.TabIndex = 5;
-            guna2Button1.Text = "Chi Tiêu";
+            btnSp.BackColor = Color.SeaShell;
+            btnSp.BorderRadius = 18;
+            btnSp.CustomizableEdges = customizableEdges7;
+            btnSp.DisabledState.BorderColor = Color.DarkGray;
+            btnSp.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnSp.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnSp.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnSp.FillColor = Color.SandyBrown;
+            btnSp.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSp.ForeColor = Color.White;
+            btnSp.Location = new Point(797, 5);
+            btnSp.Name = "btnSp";
+            btnSp.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnSp.Size = new Size(151, 44);
+            btnSp.TabIndex = 5;
+            btnSp.Text = "Chi Tiêu";
+            btnSp.Click += guna2Button1_Click_1;
             // 
             // btnAccount
             // 
@@ -271,6 +277,8 @@
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(uC_Warehouse1);
+            panel2.Controls.Add(uC_Spending1);
             panel2.Controls.Add(uC_Account1);
             panel2.Controls.Add(uC_Table1);
             panel2.Controls.Add(uC_FoodCategory1);
@@ -280,6 +288,13 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1131, 566);
             panel2.TabIndex = 4;
+            // 
+            // uC_Spending1
+            // 
+            uC_Spending1.Location = new Point(3, -1);
+            uC_Spending1.Name = "uC_Spending1";
+            uC_Spending1.Size = new Size(1127, 562);
+            uC_Spending1.TabIndex = 5;
             // 
             // uC_Account1
             // 
@@ -368,6 +383,21 @@
             // 
             guna2Elipse5.TargetControl = this;
             // 
+            // guna2Elipse6
+            // 
+            guna2Elipse6.TargetControl = this;
+            // 
+            // guna2Elipse7
+            // 
+            guna2Elipse7.TargetControl = this;
+            // 
+            // uC_Warehouse1
+            // 
+            uC_Warehouse1.Location = new Point(3, -1);
+            uC_Warehouse1.Name = "uC_Warehouse1";
+            uC_Warehouse1.Size = new Size(1135, 562);
+            uC_Warehouse1.TabIndex = 6;
+            // 
             // fAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -403,8 +433,8 @@
         private Panel panelMoving;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnWarehouse;
+        private Guna.UI2.WinForms.Guna2Button btnSp;
         private Admin_Control.UC_Bill uC_Bill1;
         private Admin_Control.ucFood ucFood1;
         private Admin_Control.UC_FoodCategory uC_FoodCategory1;
@@ -415,5 +445,9 @@
         private Admin_Control.UC_Table uC_Table1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse5;
         private Admin_Control.UC_Account uC_Account1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse6;
+        private Admin_Control.UC_Spending uC_Spending1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse7;
+        private Admin_Control.UC_Warehouse uC_Warehouse1;
     }
 }

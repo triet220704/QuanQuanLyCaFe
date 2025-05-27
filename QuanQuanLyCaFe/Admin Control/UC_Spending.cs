@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace QuanQuanLyCaFe.Admin_Control
 {
-    public partial class UC_Bill : UserControl
+    public partial class UC_Spending : UserControl
     {
-        public UC_Bill()
+        public UC_Spending()
         {
             InitializeComponent();
-        }
-
-        private void UC_Bill_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

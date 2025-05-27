@@ -193,6 +193,7 @@
             dgvBill.RowHeadersWidth = 51;
             dgvBill.Size = new Size(861, 568);
             dgvBill.TabIndex = 0;
+            dgvBill.CellContentClick += dgvBill_CellContentClick;
             // 
             // panel1
             // 

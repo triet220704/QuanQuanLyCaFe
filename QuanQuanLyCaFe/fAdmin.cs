@@ -24,6 +24,8 @@ namespace QuanQuanLyCaFe
             uC_FoodCategory1.Visible = false;
             ucFood1.Visible = false;
             uC_Account1.Visible = false;
+            uC_Spending1.Visible = false;
+            uC_Warehouse1.Visible = false;
             btnBill.PerformClick();
         }
 
@@ -88,6 +90,20 @@ namespace QuanQuanLyCaFe
         private void uC_Account1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2Button1_Click_1(object sender, EventArgs e)
+        {
+            panelMoving.Left = btnSp.Left + 25;
+            uC_Spending1.Visible = true;
+            uC_Spending1.BringToFront();
+        }
+
+        private void btnWarehouse_Click(object sender, EventArgs e)
+        {
+            panelMoving.Left = btnWarehouse.Left + 25;
+            uC_Warehouse1.Visible = true;
+            uC_Warehouse1.BringToFront();
         }
     }
 }
