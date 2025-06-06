@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
             dgvBill = new Guna.UI2.WinForms.Guna2DataGridView();
             panel1 = new Panel();
@@ -56,27 +56,27 @@
             // 
             // dgvBill
             // 
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dgvBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dgvBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvBill.BorderStyle = BorderStyle.Fixed3D;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgvBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvBill.ColumnHeadersHeight = 4;
             dgvBill.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.White;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dgvBill.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvBill.DefaultCellStyle = dataGridViewCellStyle3;
             dgvBill.GridColor = Color.FromArgb(231, 229, 255);
             dgvBill.Location = new Point(9, 72);
             dgvBill.Name = "dgvBill";
@@ -111,9 +111,9 @@
             panel1.Controls.Add(btnView);
             panel1.Controls.Add(dtpTodate);
             panel1.Controls.Add(dtpFromDate);
-            panel1.Location = new Point(12, 12);
+            panel1.Location = new Point(9, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1124, 98);
+            panel1.Size = new Size(1124, 71);
             panel1.TabIndex = 4;
             // 
             // btnView
@@ -121,7 +121,7 @@
             btnView.BorderRadius = 18;
             btnView.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
             btnView.BorderThickness = 1;
-            btnView.CustomizableEdges = customizableEdges7;
+            btnView.CustomizableEdges = customizableEdges1;
             btnView.DisabledState.BorderColor = Color.DarkGray;
             btnView.DisabledState.CustomBorderColor = Color.DarkGray;
             btnView.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -131,7 +131,7 @@
             btnView.ForeColor = Color.White;
             btnView.Location = new Point(461, 11);
             btnView.Name = "btnView";
-            btnView.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnView.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnView.Size = new Size(173, 38);
             btnView.TabIndex = 2;
             btnView.Text = "Thông Kê";
@@ -139,14 +139,14 @@
             // dtpTodate
             // 
             dtpTodate.Checked = true;
-            dtpTodate.CustomizableEdges = customizableEdges9;
+            dtpTodate.CustomizableEdges = customizableEdges3;
             dtpTodate.Font = new Font("Segoe UI", 9F);
             dtpTodate.Format = DateTimePickerFormat.Long;
             dtpTodate.Location = new Point(761, 11);
             dtpTodate.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpTodate.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpTodate.Name = "dtpTodate";
-            dtpTodate.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            dtpTodate.ShadowDecoration.CustomizableEdges = customizableEdges4;
             dtpTodate.Size = new Size(262, 38);
             dtpTodate.TabIndex = 1;
             dtpTodate.Value = new DateTime(2025, 5, 26, 22, 39, 25, 206);
@@ -154,14 +154,14 @@
             // dtpFromDate
             // 
             dtpFromDate.Checked = true;
-            dtpFromDate.CustomizableEdges = customizableEdges11;
+            dtpFromDate.CustomizableEdges = customizableEdges5;
             dtpFromDate.Font = new Font("Segoe UI", 9F);
             dtpFromDate.Format = DateTimePickerFormat.Long;
             dtpFromDate.Location = new Point(77, 11);
             dtpFromDate.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpFromDate.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpFromDate.Name = "dtpFromDate";
-            dtpFromDate.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            dtpFromDate.ShadowDecoration.CustomizableEdges = customizableEdges6;
             dtpFromDate.Size = new Size(262, 38);
             dtpFromDate.TabIndex = 0;
             dtpFromDate.Value = new DateTime(2025, 5, 26, 22, 39, 25, 206);

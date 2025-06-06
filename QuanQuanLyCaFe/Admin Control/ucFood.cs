@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanQuanLyCaFe.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,8 +17,21 @@ namespace QuanQuanLyCaFe.Admin_Control
         {
             InitializeComponent();
         }
+        void LoadFoodtList()
+        {
+            string query = "select * from Account ";
+
+
+
+            dgvFood.DataSource = DataProvider.Instance.ExecuteQuery(query);
+        }
 
         private void btnAddEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ucFood_Load(object sender, EventArgs e)
         {
 
         }

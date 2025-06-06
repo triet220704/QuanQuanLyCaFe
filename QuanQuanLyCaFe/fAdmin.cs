@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanQuanLyCaFe.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,8 +16,14 @@ namespace QuanQuanLyCaFe
         public fAdmin()
         {
             InitializeComponent();
+            
         }
+       
+        
+            
 
+           
+        
         private void fAdmin_Load(object sender, EventArgs e)
         {
             uC_Bill1.Visible = false;
@@ -51,7 +58,7 @@ namespace QuanQuanLyCaFe
 
         private void btnFood_Click(object sender, EventArgs e)
         {
-            panelMoving.Left = btnFood.Left + 25;
+            panelMoving.Left = btnFood.Left + 30;
             ucFood1.Visible = true;
             ucFood1.BringToFront();
         }
@@ -63,7 +70,7 @@ namespace QuanQuanLyCaFe
 
         private void btnFoodeCategory_Click(object sender, EventArgs e)
         {
-            panelMoving.Left = btnFoodeCategory.Left + 25;
+            panelMoving.Left = btnFoodeCategory.Left + 30;
             uC_FoodCategory1.Visible = true;
             uC_FoodCategory1.BringToFront();
         }
@@ -75,14 +82,14 @@ namespace QuanQuanLyCaFe
 
         private void btnTable_Click(object sender, EventArgs e)
         {
-            panelMoving.Left = btnTable.Left + 25;
+            panelMoving.Left = btnTable.Left + 30;
             uC_Table1.Visible = true;
             uC_Table1.BringToFront();
         }
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
-            panelMoving.Left = btnAccount.Left + 25;
+            panelMoving.Left = btnAccount.Left + 30;
             uC_Account1.Visible = true;
             uC_Account1.BringToFront();
         }
@@ -94,14 +101,14 @@ namespace QuanQuanLyCaFe
 
         private void guna2Button1_Click_1(object sender, EventArgs e)
         {
-            panelMoving.Left = btnSp.Left + 25;
+            panelMoving.Left = btnSp.Left + 30;
             uC_Spending1.Visible = true;
             uC_Spending1.BringToFront();
         }
 
         private void btnWarehouse_Click(object sender, EventArgs e)
         {
-            panelMoving.Left = btnWarehouse.Left + 25;
+            panelMoving.Left = btnWarehouse.Left + 30;
             uC_Warehouse1.Visible = true;
             uC_Warehouse1.BringToFront();
         }

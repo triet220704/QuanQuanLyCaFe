@@ -63,8 +63,8 @@
             panel7 = new Panel();
             tbAccountUsername = new Guna.UI2.WinForms.Guna2TextBox();
             label5 = new Label();
-            dgvAccount = new Guna.UI2.WinForms.Guna2DataGridView();
             guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
+            dgvAccount = new Guna.UI2.WinForms.Guna2DataGridView();
             panel5.SuspendLayout();
             panel25.SuspendLayout();
             panel8.SuspendLayout();
@@ -82,7 +82,7 @@
             panel5.Controls.Add(btnAccountAdd);
             panel5.Controls.Add(panel8);
             panel5.Controls.Add(panel7);
-            panel5.Location = new Point(650, 68);
+            panel5.Location = new Point(650, 12);
             panel5.Name = "panel5";
             panel5.Size = new Size(443, 466);
             panel5.TabIndex = 10;
@@ -301,8 +301,15 @@
             label5.TabIndex = 2;
             label5.Text = "Tên tài khoản:";
             // 
+            // guna2Elipse1
+            // 
+            guna2Elipse1.BorderRadius = 15;
+            guna2Elipse1.TargetControl = this;
+            // 
             // dgvAccount
             // 
+            dgvAccount.AllowUserToAddRows = false;
+            dgvAccount.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = Color.White;
             dgvAccount.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -313,7 +320,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgvAccount.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgvAccount.ColumnHeadersHeight = 4;
+            dgvAccount.ColumnHeadersHeight = 30;
             dgvAccount.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
@@ -324,12 +331,14 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvAccount.DefaultCellStyle = dataGridViewCellStyle3;
             dgvAccount.GridColor = Color.FromArgb(231, 229, 255);
-            dgvAccount.Location = new Point(56, 12);
+            dgvAccount.Location = new Point(25, 12);
+            dgvAccount.Margin = new Padding(3, 0, 3, 3);
             dgvAccount.Name = "dgvAccount";
+            dgvAccount.ReadOnly = true;
             dgvAccount.RowHeadersVisible = false;
             dgvAccount.RowHeadersWidth = 51;
-            dgvAccount.Size = new Size(588, 522);
-            dgvAccount.TabIndex = 9;
+            dgvAccount.Size = new Size(619, 500);
+            dgvAccount.TabIndex = 11;
             dgvAccount.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgvAccount.ThemeStyle.AlternatingRowsStyle.Font = null;
             dgvAccount.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
@@ -342,8 +351,8 @@
             dgvAccount.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
             dgvAccount.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             dgvAccount.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvAccount.ThemeStyle.HeaderStyle.Height = 4;
-            dgvAccount.ThemeStyle.ReadOnly = false;
+            dgvAccount.ThemeStyle.HeaderStyle.Height = 30;
+            dgvAccount.ThemeStyle.ReadOnly = true;
             dgvAccount.ThemeStyle.RowsStyle.BackColor = Color.White;
             dgvAccount.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvAccount.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
@@ -352,19 +361,15 @@
             dgvAccount.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvAccount.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
-            // guna2Elipse1
-            // 
-            guna2Elipse1.BorderRadius = 15;
-            guna2Elipse1.TargetControl = this;
-            // 
             // UC_Account
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(panel5);
             Controls.Add(dgvAccount);
+            Controls.Add(panel5);
             Name = "UC_Account";
             Size = new Size(1149, 547);
+            Load += UC_Account_Load;
             panel5.ResumeLayout(false);
             panel25.ResumeLayout(false);
             panel25.PerformLayout();
@@ -389,11 +394,11 @@
         private Panel panel7;
         private Guna.UI2.WinForms.Guna2TextBox tbAccountUsername;
         private Label label5;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvAccount;
         private Panel panel25;
         private Guna.UI2.WinForms.Guna2ComboBox cbAccountType;
         private Label label11;
         private Guna.UI2.WinForms.Guna2Button btnResetPassword;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvAccount;
     }
 }

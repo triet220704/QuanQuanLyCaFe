@@ -46,10 +46,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnExit = new Guna.UI2.WinForms.Guna2Button();
-            btnMinisize = new Guna.UI2.WinForms.Guna2Button();
             panel1 = new Panel();
             btnWarehouse = new Guna.UI2.WinForms.Guna2Button();
             btnSp = new Guna.UI2.WinForms.Guna2Button();
@@ -59,6 +56,7 @@
             btnFood = new Guna.UI2.WinForms.Guna2Button();
             btnBill = new Guna.UI2.WinForms.Guna2Button();
             panel2 = new Panel();
+            uC_Warehouse1 = new Admin_Control.UC_Warehouse();
             uC_Spending1 = new Admin_Control.UC_Spending();
             uC_Account1 = new Admin_Control.UC_Account();
             uC_Table1 = new Admin_Control.UC_Table();
@@ -75,7 +73,6 @@
             guna2Elipse5 = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2Elipse6 = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2Elipse7 = new Guna.UI2.WinForms.Guna2Elipse(components);
-            uC_Warehouse1 = new Admin_Control.UC_Warehouse();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -100,25 +97,6 @@
             btnExit.TabIndex = 1;
             btnExit.Click += guna2Button1_Click;
             // 
-            // btnMinisize
-            // 
-            btnMinisize.CustomizableEdges = customizableEdges3;
-            btnMinisize.DisabledState.BorderColor = Color.DarkGray;
-            btnMinisize.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnMinisize.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnMinisize.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnMinisize.FillColor = Color.SandyBrown;
-            btnMinisize.Font = new Font("Segoe UI", 9F);
-            btnMinisize.ForeColor = Color.White;
-            btnMinisize.Image = (Image)resources.GetObject("btnMinisize.Image");
-            btnMinisize.ImageSize = new Size(30, 30);
-            btnMinisize.Location = new Point(1117, 3);
-            btnMinisize.Name = "btnMinisize";
-            btnMinisize.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnMinisize.Size = new Size(32, 27);
-            btnMinisize.TabIndex = 2;
-            btnMinisize.Click += btnMinisize_Click;
-            // 
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.Fixed3D;
@@ -138,7 +116,7 @@
             // 
             btnWarehouse.BackColor = Color.SeaShell;
             btnWarehouse.BorderRadius = 18;
-            btnWarehouse.CustomizableEdges = customizableEdges5;
+            btnWarehouse.CustomizableEdges = customizableEdges3;
             btnWarehouse.DisabledState.BorderColor = Color.DarkGray;
             btnWarehouse.DisabledState.CustomBorderColor = Color.DarkGray;
             btnWarehouse.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -148,7 +126,7 @@
             btnWarehouse.ForeColor = Color.White;
             btnWarehouse.Location = new Point(955, 4);
             btnWarehouse.Name = "btnWarehouse";
-            btnWarehouse.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnWarehouse.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnWarehouse.Size = new Size(159, 44);
             btnWarehouse.TabIndex = 6;
             btnWarehouse.Text = "Kho";
@@ -158,7 +136,7 @@
             // 
             btnSp.BackColor = Color.SeaShell;
             btnSp.BorderRadius = 18;
-            btnSp.CustomizableEdges = customizableEdges7;
+            btnSp.CustomizableEdges = customizableEdges5;
             btnSp.DisabledState.BorderColor = Color.DarkGray;
             btnSp.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSp.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -168,7 +146,7 @@
             btnSp.ForeColor = Color.White;
             btnSp.Location = new Point(797, 5);
             btnSp.Name = "btnSp";
-            btnSp.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnSp.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnSp.Size = new Size(151, 44);
             btnSp.TabIndex = 5;
             btnSp.Text = "Chi Tiêu";
@@ -178,7 +156,7 @@
             // 
             btnAccount.BackColor = Color.SeaShell;
             btnAccount.BorderRadius = 18;
-            btnAccount.CustomizableEdges = customizableEdges9;
+            btnAccount.CustomizableEdges = customizableEdges7;
             btnAccount.DisabledState.BorderColor = Color.DarkGray;
             btnAccount.DisabledState.CustomBorderColor = Color.DarkGray;
             btnAccount.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -188,7 +166,7 @@
             btnAccount.ForeColor = Color.White;
             btnAccount.Location = new Point(630, 4);
             btnAccount.Name = "btnAccount";
-            btnAccount.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnAccount.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnAccount.Size = new Size(159, 44);
             btnAccount.TabIndex = 4;
             btnAccount.Text = "Tài Khoản";
@@ -198,7 +176,7 @@
             // 
             btnTable.BackColor = Color.SeaShell;
             btnTable.BorderRadius = 18;
-            btnTable.CustomizableEdges = customizableEdges11;
+            btnTable.CustomizableEdges = customizableEdges9;
             btnTable.DisabledState.BorderColor = Color.DarkGray;
             btnTable.DisabledState.CustomBorderColor = Color.DarkGray;
             btnTable.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -208,7 +186,7 @@
             btnTable.ForeColor = Color.White;
             btnTable.Location = new Point(478, 5);
             btnTable.Name = "btnTable";
-            btnTable.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnTable.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnTable.Size = new Size(144, 44);
             btnTable.TabIndex = 3;
             btnTable.Text = "Bàn Ăn";
@@ -218,7 +196,7 @@
             // 
             btnFoodeCategory.BackColor = Color.SeaShell;
             btnFoodeCategory.BorderRadius = 18;
-            btnFoodeCategory.CustomizableEdges = customizableEdges13;
+            btnFoodeCategory.CustomizableEdges = customizableEdges11;
             btnFoodeCategory.DisabledState.BorderColor = Color.DarkGray;
             btnFoodeCategory.DisabledState.CustomBorderColor = Color.DarkGray;
             btnFoodeCategory.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -228,7 +206,7 @@
             btnFoodeCategory.ForeColor = Color.White;
             btnFoodeCategory.Location = new Point(323, 6);
             btnFoodeCategory.Name = "btnFoodeCategory";
-            btnFoodeCategory.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btnFoodeCategory.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnFoodeCategory.Size = new Size(146, 44);
             btnFoodeCategory.TabIndex = 2;
             btnFoodeCategory.Text = "Danh Mục";
@@ -238,7 +216,7 @@
             // 
             btnFood.BackColor = Color.SeaShell;
             btnFood.BorderRadius = 18;
-            btnFood.CustomizableEdges = customizableEdges15;
+            btnFood.CustomizableEdges = customizableEdges13;
             btnFood.DisabledState.BorderColor = Color.DarkGray;
             btnFood.DisabledState.CustomBorderColor = Color.DarkGray;
             btnFood.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -248,7 +226,7 @@
             btnFood.ForeColor = Color.White;
             btnFood.Location = new Point(163, 6);
             btnFood.Name = "btnFood";
-            btnFood.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btnFood.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btnFood.Size = new Size(147, 44);
             btnFood.TabIndex = 1;
             btnFood.Text = "Thức Ăn";
@@ -258,7 +236,7 @@
             // 
             btnBill.BackColor = Color.SeaShell;
             btnBill.BorderRadius = 18;
-            btnBill.CustomizableEdges = customizableEdges17;
+            btnBill.CustomizableEdges = customizableEdges15;
             btnBill.DisabledState.BorderColor = Color.DarkGray;
             btnBill.DisabledState.CustomBorderColor = Color.DarkGray;
             btnBill.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -268,7 +246,7 @@
             btnBill.ForeColor = Color.White;
             btnBill.Location = new Point(8, 6);
             btnBill.Name = "btnBill";
-            btnBill.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            btnBill.ShadowDecoration.CustomizableEdges = customizableEdges16;
             btnBill.Size = new Size(144, 44);
             btnBill.TabIndex = 0;
             btnBill.Text = "Danh Thu";
@@ -288,6 +266,13 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1131, 566);
             panel2.TabIndex = 4;
+            // 
+            // uC_Warehouse1
+            // 
+            uC_Warehouse1.Location = new Point(3, -1);
+            uC_Warehouse1.Name = "uC_Warehouse1";
+            uC_Warehouse1.Size = new Size(1127, 562);
+            uC_Warehouse1.TabIndex = 6;
             // 
             // uC_Spending1
             // 
@@ -359,7 +344,6 @@
             panel3.BackColor = Color.SandyBrown;
             panel3.Controls.Add(label1);
             panel3.Controls.Add(btnExit);
-            panel3.Controls.Add(btnMinisize);
             panel3.Location = new Point(-1, -2);
             panel3.Name = "panel3";
             panel3.Size = new Size(1184, 61);
@@ -369,11 +353,11 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(521, 11);
+            label1.Location = new Point(489, 11);
             label1.Name = "label1";
-            label1.Size = new Size(121, 40);
+            label1.Size = new Size(224, 40);
             label1.TabIndex = 0;
-            label1.Text = "Admin";
+            label1.Text = "Nhà Quản Lý";
             // 
             // guna2Elipse4
             // 
@@ -390,13 +374,6 @@
             // guna2Elipse7
             // 
             guna2Elipse7.TargetControl = this;
-            // 
-            // uC_Warehouse1
-            // 
-            uC_Warehouse1.Location = new Point(3, -1);
-            uC_Warehouse1.Name = "uC_Warehouse1";
-            uC_Warehouse1.Size = new Size(1135, 562);
-            uC_Warehouse1.TabIndex = 6;
             // 
             // fAdmin
             // 
@@ -422,7 +399,6 @@
 
         #endregion
         private Guna.UI2.WinForms.Guna2Button btnExit;
-        private Guna.UI2.WinForms.Guna2Button btnMinisize;
         private Panel panel1;
         private Guna.UI2.WinForms.Guna2Button btnBill;
         private Panel panel2;

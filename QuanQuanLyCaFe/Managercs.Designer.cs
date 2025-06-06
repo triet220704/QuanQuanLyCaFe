@@ -49,8 +49,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Managercs));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel2 = new Panel();
             listView1 = new ListView();
             panel3 = new Panel();
@@ -66,7 +64,6 @@
             cbCategory = new Guna.UI2.WinForms.Guna2ComboBox();
             Table = new FlowLayoutPanel();
             panel1 = new Panel();
-            btnMinisize = new Guna.UI2.WinForms.Guna2Button();
             btnExit = new Guna.UI2.WinForms.Guna2Button();
             label1 = new Label();
             menuStrip1 = new MenuStrip();
@@ -290,7 +287,6 @@
             // panel1
             // 
             panel1.BackColor = Color.SandyBrown;
-            panel1.Controls.Add(btnMinisize);
             panel1.Controls.Add(btnExit);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(1, 2);
@@ -298,27 +294,9 @@
             panel1.Size = new Size(1034, 66);
             panel1.TabIndex = 6;
             // 
-            // btnMinisize
-            // 
-            btnMinisize.CustomizableEdges = customizableEdges19;
-            btnMinisize.DisabledState.BorderColor = Color.DarkGray;
-            btnMinisize.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnMinisize.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnMinisize.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnMinisize.FillColor = Color.SandyBrown;
-            btnMinisize.Font = new Font("Segoe UI", 9F);
-            btnMinisize.ForeColor = Color.White;
-            btnMinisize.Image = (Image)resources.GetObject("btnMinisize.Image");
-            btnMinisize.ImageSize = new Size(30, 30);
-            btnMinisize.Location = new Point(969, 2);
-            btnMinisize.Name = "btnMinisize";
-            btnMinisize.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            btnMinisize.Size = new Size(32, 27);
-            btnMinisize.TabIndex = 4;
-            // 
             // btnExit
             // 
-            btnExit.CustomizableEdges = customizableEdges21;
+            btnExit.CustomizableEdges = customizableEdges19;
             btnExit.DisabledState.BorderColor = Color.DarkGray;
             btnExit.DisabledState.CustomBorderColor = Color.DarkGray;
             btnExit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -330,7 +308,7 @@
             btnExit.ImageSize = new Size(30, 30);
             btnExit.Location = new Point(1000, 2);
             btnExit.Name = "btnExit";
-            btnExit.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            btnExit.ShadowDecoration.CustomizableEdges = customizableEdges20;
             btnExit.Size = new Size(32, 27);
             btnExit.TabIndex = 3;
             btnExit.Click += btnExit_Click;
@@ -444,7 +422,6 @@
         private ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private Panel panel5;
         private Label label1;
-        private Guna.UI2.WinForms.Guna2Button btnMinisize;
         private Guna.UI2.WinForms.Guna2Button btnExit;
         private Guna.UI2.WinForms.Guna2ComboBox cbFood;
         private Guna.UI2.WinForms.Guna2ComboBox cbCategory;

@@ -105,11 +105,11 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvFood.DefaultCellStyle = dataGridViewCellStyle3;
             dgvFood.GridColor = Color.FromArgb(231, 229, 255);
-            dgvFood.Location = new Point(46, 14);
+            dgvFood.Location = new Point(3, 14);
             dgvFood.Name = "dgvFood";
             dgvFood.RowHeadersVisible = false;
             dgvFood.RowHeadersWidth = 51;
-            dgvFood.Size = new Size(588, 522);
+            dgvFood.Size = new Size(631, 522);
             dgvFood.TabIndex = 0;
             dgvFood.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgvFood.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -430,6 +430,7 @@
             Controls.Add(dgvFood);
             Name = "ucFood";
             Size = new Size(1149, 547);
+            Load += ucFood_Load;
             ((System.ComponentModel.ISupportInitialize)dgvFood).EndInit();
             panel5.ResumeLayout(false);
             panel10.ResumeLayout(false);
