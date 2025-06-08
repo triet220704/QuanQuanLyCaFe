@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanQuanLyCaFe.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -51,12 +52,24 @@ namespace QuanQuanLyCaFe
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Managercs f = new Managercs();
-            this.Hide();
-            f.ShowDialog();
-            //this.Show();
+            string userName = txbUserName.Text;
+            string passWord = TxtPassWord.Text;
+            if ( login(userName,passWord) )
+            {
+                Managercs f = new Managercs();
+                this.Hide();
+                f.ShowDialog();
+                //this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Sai tên tài khoản hoặc mật khẩu");
+            }
         }
-
+        bool login(string userName,string passWord)
+        {
+            return AccountDAO.Instance.login(userName,passWord);
+        }
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
 

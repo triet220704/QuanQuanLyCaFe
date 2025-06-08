@@ -17,17 +17,19 @@ namespace QuanQuanLyCaFe.Admin_Control
         public UC_Account()
         {
             InitializeComponent();
-            LoadAccountList();
+            
+          /*  LoadAccountList();*/
+
         }
 
-        void LoadAccountList()
+        /*void LoadAccountList()
         {
             string query = "EXEC USP_GetAccountByUserName @username";
 
             
 
             dgvAccount.DataSource = DataProvider.Instance.ExecuteQuery(query, new object[] {"staff"});
-        }
+        }*/
 
         private void UC_Account_Load(object sender, EventArgs e)
         {

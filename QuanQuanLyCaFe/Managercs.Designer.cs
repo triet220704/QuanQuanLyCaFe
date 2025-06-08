@@ -62,7 +62,7 @@
             AddFood = new Guna.UI2.WinForms.Guna2Button();
             cbFood = new Guna.UI2.WinForms.Guna2ComboBox();
             cbCategory = new Guna.UI2.WinForms.Guna2ComboBox();
-            Table = new FlowLayoutPanel();
+            flpTable = new FlowLayoutPanel();
             panel1 = new Panel();
             btnExit = new Guna.UI2.WinForms.Guna2Button();
             label1 = new Label();
@@ -94,7 +94,7 @@
             // 
             listView1.Location = new Point(3, 0);
             listView1.Name = "listView1";
-            listView1.Size = new Size(509, 426);
+            listView1.Size = new Size(502, 426);
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -277,22 +277,24 @@
             cbCategory.Size = new Size(295, 36);
             cbCategory.TabIndex = 4;
             // 
-            // Table
+            // flpTable
             // 
-            Table.Location = new Point(10, 104);
-            Table.Name = "Table";
-            Table.Size = new Size(498, 620);
-            Table.TabIndex = 5;
+            flpTable.AutoScroll = true;
+            flpTable.Location = new Point(12, 104);
+            flpTable.Name = "flpTable";
+            flpTable.Size = new Size(496, 620);
+            flpTable.TabIndex = 5;
             // 
             // panel1
             // 
             panel1.BackColor = Color.SandyBrown;
             panel1.Controls.Add(btnExit);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(1, 2);
+            panel1.Location = new Point(1, -1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1034, 66);
+            panel1.Size = new Size(1034, 69);
             panel1.TabIndex = 6;
+            panel1.Paint += panel1_Paint;
             // 
             // btnExit
             // 
@@ -331,7 +333,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { quảnLíToolStripMenuItem, thôngTinTàiKhoảnToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(278, 33);
+            menuStrip1.Size = new Size(428, 33);
             menuStrip1.TabIndex = 7;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -365,6 +367,7 @@
             đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
             đăngXuấtToolStripMenuItem.Size = new Size(240, 30);
             đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
+            đăngXuấtToolStripMenuItem.Click += đăngXuấtToolStripMenuItem_Click_1;
             // 
             // panel5
             // 
@@ -383,7 +386,7 @@
             ClientSize = new Size(1035, 729);
             Controls.Add(panel5);
             Controls.Add(panel1);
-            Controls.Add(Table);
+            Controls.Add(flpTable);
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel2);
@@ -412,7 +415,7 @@
         private ListView listView1;
         private Panel panel3;
         private Panel panel4;
-        private FlowLayoutPanel Table;
+        private FlowLayoutPanel flpTable;
         private NumericUpDown nprDiscount1;
         private Panel panel1;
         private MenuStrip menuStrip1;

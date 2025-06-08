@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 using System;
 using System.Windows.Forms;
+using QuanQuanLyCaFe.DAO;
+using QuanQuanLyCaFe.DTO;
 
 
 namespace QuanQuanLyCaFe
@@ -21,8 +23,33 @@ namespace QuanQuanLyCaFe
         public Managercs()
         {
             InitializeComponent();
+            LoadTable();
         }
+        #region Method
+        void LoadTable()
+        {
+            List<Table> tableList = TableDAO.Instance.LoadTableList();
 
+            foreach (Table item in tableList)
+            {
+                Button btn = new Button() { Width = TableDAO.TableWidth, Height = TableDAO.TableHeight };
+                btn.Text = item.Name + Environment.NewLine + item.Status;
+                switch (item.Status)
+                {
+                    case "Trống":
+                        btn.BackColor = Color.SandyBrown;
+                        break;
+                    default:
+                        btn.BackColor = Color.DarkOrange;
+                        break;
+                }
+                flpTable.Controls.Add(btn);
+            }
+
+        }
+        #endregion
+
+        #region Events
         private void Managercs_Load(object sender, EventArgs e)
         {
 
@@ -57,7 +84,10 @@ namespace QuanQuanLyCaFe
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            Login login = new Login();
+            login.ShowDialog();
+            this.Close();
         }
 
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
@@ -68,6 +98,17 @@ namespace QuanQuanLyCaFe
         private void nprDiscount_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+        #endregion
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
