@@ -47,11 +47,18 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Managercs));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Managercs));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel2 = new Panel();
-            listView1 = new ListView();
+            lsvBill = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
             panel3 = new Panel();
+            txbTotalPrice = new Guna.UI2.WinForms.Guna2TextBox();
             nprDiscount = new Guna.UI2.WinForms.Guna2NumericUpDown();
             cbSwitchTable = new Guna.UI2.WinForms.Guna2ComboBox();
             Discount = new Guna.UI2.WinForms.Guna2Button();
@@ -72,7 +79,6 @@
             thôngTinCáNhânToolStripMenuItem = new ToolStripMenuItem();
             đăngXuấtToolStripMenuItem = new ToolStripMenuItem();
             panel5 = new Panel();
-            panel2.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nprDiscount).BeginInit();
             panel4.SuspendLayout();
@@ -84,22 +90,47 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(listView1);
             panel2.Location = new Point(515, 185);
             panel2.Name = "panel2";
-            panel2.Size = new Size(508, 429);
+            panel2.Size = new Size(541, 429);
             panel2.TabIndex = 2;
             // 
-            // listView1
+            // lsvBill
             // 
-            listView1.Location = new Point(3, 0);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(502, 426);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
+            lsvBill.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
+            lsvBill.Enabled = false;
+            lsvBill.GridLines = true;
+            lsvBill.Location = new Point(521, 185);
+            lsvBill.Name = "lsvBill";
+            lsvBill.Size = new Size(532, 426);
+            lsvBill.TabIndex = 0;
+            lsvBill.UseCompatibleStateImageBehavior = false;
+            lsvBill.View = View.Details;
+            lsvBill.SelectedIndexChanged += lsvBill_SelectedIndexChanged;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Tên Món";
+            columnHeader1.Width = 230;
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Số Lượng";
+            columnHeader2.Width = 100;
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Đơn giá";
+            columnHeader3.Width = 90;
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "Thành Tiền";
+            columnHeader4.Width = 110;
             // 
             // panel3
             // 
+            panel3.Controls.Add(txbTotalPrice);
             panel3.Controls.Add(nprDiscount);
             panel3.Controls.Add(cbSwitchTable);
             panel3.Controls.Add(Discount);
@@ -107,19 +138,42 @@
             panel3.Controls.Add(checkout);
             panel3.Location = new Point(515, 620);
             panel3.Name = "panel3";
-            panel3.Size = new Size(508, 104);
+            panel3.Size = new Size(538, 104);
             panel3.TabIndex = 3;
+            // 
+            // txbTotalPrice
+            // 
+            txbTotalPrice.CustomizableEdges = customizableEdges1;
+            txbTotalPrice.DefaultText = "0";
+            txbTotalPrice.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txbTotalPrice.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txbTotalPrice.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txbTotalPrice.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txbTotalPrice.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txbTotalPrice.Font = new Font("Arial", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txbTotalPrice.ForeColor = Color.SandyBrown;
+            txbTotalPrice.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txbTotalPrice.Location = new Point(267, 34);
+            txbTotalPrice.Margin = new Padding(4);
+            txbTotalPrice.Name = "txbTotalPrice";
+            txbTotalPrice.PlaceholderText = "";
+            txbTotalPrice.ReadOnly = true;
+            txbTotalPrice.SelectedText = "";
+            txbTotalPrice.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            txbTotalPrice.Size = new Size(134, 38);
+            txbTotalPrice.TabIndex = 16;
+            txbTotalPrice.TextAlign = HorizontalAlignment.Right;
             // 
             // nprDiscount
             // 
             nprDiscount.BackColor = Color.Transparent;
-            nprDiscount.CustomizableEdges = customizableEdges1;
+            nprDiscount.CustomizableEdges = customizableEdges3;
             nprDiscount.Font = new Font("Segoe UI", 9F);
-            nprDiscount.Location = new Point(188, 59);
+            nprDiscount.Location = new Point(145, 59);
             nprDiscount.Margin = new Padding(3, 4, 3, 4);
             nprDiscount.Name = "nprDiscount";
-            nprDiscount.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            nprDiscount.Size = new Size(143, 37);
+            nprDiscount.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            nprDiscount.Size = new Size(118, 37);
             nprDiscount.TabIndex = 15;
             nprDiscount.TextOffset = new Point(45, 0);
             nprDiscount.UpDownButtonFillColor = Color.SandyBrown;
@@ -127,7 +181,7 @@
             // cbSwitchTable
             // 
             cbSwitchTable.BackColor = Color.Transparent;
-            cbSwitchTable.CustomizableEdges = customizableEdges3;
+            cbSwitchTable.CustomizableEdges = customizableEdges5;
             cbSwitchTable.DrawMode = DrawMode.OwnerDrawFixed;
             cbSwitchTable.DropDownStyle = ComboBoxStyle.DropDownList;
             cbSwitchTable.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -137,65 +191,61 @@
             cbSwitchTable.ItemHeight = 30;
             cbSwitchTable.Location = new Point(3, 59);
             cbSwitchTable.Name = "cbSwitchTable";
-            cbSwitchTable.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            cbSwitchTable.Size = new Size(143, 36);
+            cbSwitchTable.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            cbSwitchTable.Size = new Size(136, 36);
             cbSwitchTable.TabIndex = 14;
             // 
             // Discount
             // 
-            Discount.BorderRadius = 18;
-            Discount.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
             Discount.BorderThickness = 1;
-            Discount.CustomizableEdges = customizableEdges5;
+            Discount.CustomizableEdges = customizableEdges7;
             Discount.DisabledState.BorderColor = Color.DarkGray;
             Discount.DisabledState.CustomBorderColor = Color.DarkGray;
             Discount.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             Discount.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             Discount.FillColor = Color.SandyBrown;
-            Discount.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Discount.Font = new Font("Arial", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Discount.ForeColor = Color.White;
-            Discount.Location = new Point(188, 13);
+            Discount.Location = new Point(145, 14);
             Discount.Name = "Discount";
-            Discount.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            Discount.Size = new Size(143, 38);
+            Discount.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            Discount.Size = new Size(118, 38);
             Discount.TabIndex = 13;
             Discount.Text = "Giảm giá";
             // 
             // btnSwitchTable
             // 
-            btnSwitchTable.BorderRadius = 18;
-            btnSwitchTable.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
             btnSwitchTable.BorderThickness = 1;
-            btnSwitchTable.CustomizableEdges = customizableEdges7;
+            btnSwitchTable.CustomizableEdges = customizableEdges9;
             btnSwitchTable.DisabledState.BorderColor = Color.DarkGray;
             btnSwitchTable.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSwitchTable.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnSwitchTable.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnSwitchTable.FillColor = Color.SandyBrown;
-            btnSwitchTable.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSwitchTable.Font = new Font("Arial", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSwitchTable.ForeColor = Color.White;
             btnSwitchTable.Location = new Point(3, 15);
             btnSwitchTable.Name = "btnSwitchTable";
-            btnSwitchTable.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btnSwitchTable.Size = new Size(143, 38);
+            btnSwitchTable.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnSwitchTable.Size = new Size(136, 38);
             btnSwitchTable.TabIndex = 12;
             btnSwitchTable.Text = "Chuyển bàn";
             // 
             // checkout
             // 
             checkout.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
-            checkout.CustomizableEdges = customizableEdges9;
+            checkout.CustomizableEdges = customizableEdges11;
             checkout.DisabledState.BorderColor = Color.DarkGray;
             checkout.DisabledState.CustomBorderColor = Color.DarkGray;
             checkout.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             checkout.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             checkout.FillColor = Color.SandyBrown;
-            checkout.Font = new Font("Arial", 10.8F, FontStyle.Bold);
+            checkout.Font = new Font("Arial", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             checkout.ForeColor = Color.White;
-            checkout.Location = new Point(360, 15);
+            checkout.Location = new Point(408, 15);
             checkout.Name = "checkout";
-            checkout.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            checkout.Size = new Size(141, 68);
+            checkout.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            checkout.Size = new Size(127, 68);
             checkout.TabIndex = 8;
             checkout.Text = "Thanh toán";
             // 
@@ -207,19 +257,19 @@
             panel4.Controls.Add(cbCategory);
             panel4.Location = new Point(514, 104);
             panel4.Name = "panel4";
-            panel4.Size = new Size(508, 75);
+            panel4.Size = new Size(542, 75);
             panel4.TabIndex = 4;
             // 
             // nprFood
             // 
             nprFood.BackColor = Color.Transparent;
-            nprFood.CustomizableEdges = customizableEdges11;
+            nprFood.CustomizableEdges = customizableEdges13;
             nprFood.Font = new Font("Segoe UI", 9F);
-            nprFood.Location = new Point(432, 23);
+            nprFood.Location = new Point(457, 18);
             nprFood.Margin = new Padding(3, 4, 3, 4);
             nprFood.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
             nprFood.Name = "nprFood";
-            nprFood.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            nprFood.ShadowDecoration.CustomizableEdges = customizableEdges14;
             nprFood.Size = new Size(73, 29);
             nprFood.TabIndex = 3;
             nprFood.UpDownButtonFillColor = Color.SandyBrown;
@@ -228,7 +278,7 @@
             // AddFood
             // 
             AddFood.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
-            AddFood.CustomizableEdges = customizableEdges13;
+            AddFood.CustomizableEdges = customizableEdges15;
             AddFood.DisabledState.BorderColor = Color.DarkGray;
             AddFood.DisabledState.CustomBorderColor = Color.DarkGray;
             AddFood.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -236,17 +286,18 @@
             AddFood.FillColor = Color.SandyBrown;
             AddFood.Font = new Font("Arial", 10.8F, FontStyle.Bold);
             AddFood.ForeColor = Color.White;
-            AddFood.Location = new Point(305, 3);
+            AddFood.Location = new Point(327, 3);
             AddFood.Name = "AddFood";
-            AddFood.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            AddFood.ShadowDecoration.CustomizableEdges = customizableEdges16;
             AddFood.Size = new Size(124, 69);
             AddFood.TabIndex = 6;
             AddFood.Text = "Thêm món";
+            AddFood.Click += AddFood_Click;
             // 
             // cbFood
             // 
             cbFood.BackColor = Color.Transparent;
-            cbFood.CustomizableEdges = customizableEdges15;
+            cbFood.CustomizableEdges = customizableEdges17;
             cbFood.DrawMode = DrawMode.OwnerDrawFixed;
             cbFood.DropDownStyle = ComboBoxStyle.DropDownList;
             cbFood.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -256,14 +307,14 @@
             cbFood.ItemHeight = 30;
             cbFood.Location = new Point(4, 39);
             cbFood.Name = "cbFood";
-            cbFood.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            cbFood.Size = new Size(295, 36);
+            cbFood.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            cbFood.Size = new Size(317, 36);
             cbFood.TabIndex = 5;
             // 
             // cbCategory
             // 
             cbCategory.BackColor = Color.Transparent;
-            cbCategory.CustomizableEdges = customizableEdges17;
+            cbCategory.CustomizableEdges = customizableEdges19;
             cbCategory.DrawMode = DrawMode.OwnerDrawFixed;
             cbCategory.DropDownStyle = ComboBoxStyle.DropDownList;
             cbCategory.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -273,9 +324,10 @@
             cbCategory.ItemHeight = 30;
             cbCategory.Location = new Point(4, 1);
             cbCategory.Name = "cbCategory";
-            cbCategory.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            cbCategory.Size = new Size(295, 36);
+            cbCategory.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            cbCategory.Size = new Size(317, 36);
             cbCategory.TabIndex = 4;
+            cbCategory.SelectedIndexChanged += cbCategory_SelectedIndexChanged_1;
             // 
             // flpTable
             // 
@@ -284,6 +336,7 @@
             flpTable.Name = "flpTable";
             flpTable.Size = new Size(496, 620);
             flpTable.TabIndex = 5;
+            flpTable.Paint += flpTable_Paint;
             // 
             // panel1
             // 
@@ -292,13 +345,13 @@
             panel1.Controls.Add(label1);
             panel1.Location = new Point(1, -1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1034, 69);
+            panel1.Size = new Size(1055, 69);
             panel1.TabIndex = 6;
             panel1.Paint += panel1_Paint;
             // 
             // btnExit
             // 
-            btnExit.CustomizableEdges = customizableEdges19;
+            btnExit.CustomizableEdges = customizableEdges21;
             btnExit.DisabledState.BorderColor = Color.DarkGray;
             btnExit.DisabledState.CustomBorderColor = Color.DarkGray;
             btnExit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -308,9 +361,9 @@
             btnExit.ForeColor = Color.White;
             btnExit.Image = (Image)resources.GetObject("btnExit.Image");
             btnExit.ImageSize = new Size(30, 30);
-            btnExit.Location = new Point(1000, 2);
+            btnExit.Location = new Point(1023, 4);
             btnExit.Name = "btnExit";
-            btnExit.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            btnExit.ShadowDecoration.CustomizableEdges = customizableEdges22;
             btnExit.Size = new Size(32, 27);
             btnExit.TabIndex = 3;
             btnExit.Click += btnExit_Click;
@@ -333,7 +386,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { quảnLíToolStripMenuItem, thôngTinTàiKhoảnToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(428, 33);
+            menuStrip1.Size = new Size(278, 33);
             menuStrip1.TabIndex = 7;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -375,7 +428,7 @@
             panel5.Controls.Add(menuStrip1);
             panel5.Location = new Point(1, 65);
             panel5.Name = "panel5";
-            panel5.Size = new Size(1034, 36);
+            panel5.Size = new Size(1055, 36);
             panel5.TabIndex = 7;
             // 
             // Managercs
@@ -383,7 +436,8 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1035, 729);
+            ClientSize = new Size(1058, 729);
+            Controls.Add(lsvBill);
             Controls.Add(panel5);
             Controls.Add(panel1);
             Controls.Add(flpTable);
@@ -396,7 +450,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Phần mềm quản lý quán cafe";
             Load += Managercs_Load;
-            panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)nprDiscount).EndInit();
             panel4.ResumeLayout(false);
@@ -412,7 +465,7 @@
 
         #endregion
         private Panel panel2;
-        private ListView listView1;
+        private ListView lsvBill;
         private Panel panel3;
         private Panel panel4;
         private FlowLayoutPanel flpTable;
@@ -435,5 +488,10 @@
         private Guna.UI2.WinForms.Guna2Button Discount;
         private Guna.UI2.WinForms.Guna2Button btnSwitchTable;
         private Guna.UI2.WinForms.Guna2NumericUpDown nprDiscount;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private ColumnHeader columnHeader4;
+        private Guna.UI2.WinForms.Guna2TextBox txbTotalPrice;
     }
 }

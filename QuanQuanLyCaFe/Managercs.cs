@@ -13,6 +13,8 @@ using System;
 using System.Windows.Forms;
 using QuanQuanLyCaFe.DAO;
 using QuanQuanLyCaFe.DTO;
+using System.Globalization;
+using Microsoft.Identity.Client;
 
 
 namespace QuanQuanLyCaFe
@@ -24,8 +26,21 @@ namespace QuanQuanLyCaFe
         {
             InitializeComponent();
             LoadTable();
+            LoadCategory();
         }
         #region Method
+        void LoadCategory()
+        {
+            List<Category> listCategory = CategoryDAO.Instance.GetListCategory();
+            cbCategory.DataSource = listCategory;
+            cbCategory.DisplayMember = "Name";
+        }
+        void LoadFoodListByCategoryID(int id)
+        {
+            List<Food> listFood = FoodDAO.Instance.GetFoodByCategoryID(id);
+            cbFood.DataSource = listFood;
+            cbFood.DisplayMember = "Name";
+        }
         void LoadTable()
         {
             List<Table> tableList = TableDAO.Instance.LoadTableList();
@@ -34,6 +49,8 @@ namespace QuanQuanLyCaFe
             {
                 Button btn = new Button() { Width = TableDAO.TableWidth, Height = TableDAO.TableHeight };
                 btn.Text = item.Name + Environment.NewLine + item.Status;
+                btn.Click += Btn_Click;
+                btn.Tag = item;
                 switch (item.Status)
                 {
                     case "Trống":
@@ -47,9 +64,36 @@ namespace QuanQuanLyCaFe
             }
 
         }
-        #endregion
+
+        void SHOWBill(int id)
+        {
+            lsvBill.Items.Clear();
+            List<Menu> listBillInfo = MenuDAO.Instance.GetListMenuByTable(id);
+            float totalPrice = 0;
+            foreach (Menu item in listBillInfo)
+            {
+                ListViewItem lsvItem = new ListViewItem(item.FoodName.ToString());
+                lsvItem.SubItems.Add(item.Count.ToString());
+                lsvItem.SubItems.Add(item.Price.ToString());
+                lsvItem.SubItems.Add(item.Totalprice.ToString());
+                totalPrice += item.Totalprice;
+                lsvBill.Items.Add(lsvItem);
+            }
+            CultureInfo culture = new CultureInfo("vi-VN");
+
+            // Thread.CurrentThread.CurrentCulture = culture;
+
+            txbTotalPrice.Text = totalPrice.ToString("c", culture);
+        }
+        
 
         #region Events
+        private void Btn_Click(object? sender, EventArgs e)
+        {
+            int TableID = ((sender as Button).Tag as Table).ID;
+            lsvBill.Tag = (sender as Button).Tag;
+            SHOWBill(TableID);
+        }
         private void Managercs_Load(object sender, EventArgs e)
         {
 
@@ -110,5 +154,51 @@ namespace QuanQuanLyCaFe
         {
             this.Close();
         }
+
+        private void flpTable_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lsvBill_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbCategory_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            int id = 0;
+            ComboBox cb = sender as ComboBox;
+            if (cb.SelectedItem == null)
+                return;
+
+            Category selected = cb.SelectedItem as Category;
+            id = selected.ID;
+
+            LoadFoodListByCategoryID(id);
+        }
+
+        private void AddFood_Click(object sender, EventArgs e)
+        {
+            Table table = lsvBill.Tag as Table;
+
+            int idBill = BillDAO.Instance.GetUncheckBillByTableID(table.ID);
+            int foodID = (cbFood.SelectedItem as Food).ID;
+            int count = (int)nprFood.Value;
+
+            if(idBill == -1)
+            {
+                BillDAO.Instance.InsertBill(table.ID);
+                BillInfoDAO.Instance.InsertBillInfo(BillDAO.Instance.GetMaxIDBill(), foodID, count);
+            }
+            else
+            {
+                BillInfoDAO.Instance.InsertBillInfo(idBill, foodID, count);
+            }
+            SHOWBill(table.ID);
+        }
+
+
+        #endregion
     }
 }

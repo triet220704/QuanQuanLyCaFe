@@ -54,7 +54,7 @@ namespace QuanQuanLyCaFe
         {
             string userName = txbUserName.Text;
             string passWord = TxtPassWord.Text;
-            if ( login(userName,passWord) )
+            if (login(userName, passWord))
             {
                 Managercs f = new Managercs();
                 this.Hide();
@@ -66,11 +66,16 @@ namespace QuanQuanLyCaFe
                 MessageBox.Show("Sai tên tài khoản hoặc mật khẩu");
             }
         }
-        bool login(string userName,string passWord)
+        bool login(string userName, string passWord)
         {
-            return AccountDAO.Instance.login(userName,passWord);
+            return AccountDAO.Instance.login(userName, passWord);
         }
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Login_Load(object sender, EventArgs e)
         {
 
         }
