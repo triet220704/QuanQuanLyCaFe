@@ -248,6 +248,7 @@
             checkout.Size = new Size(127, 68);
             checkout.TabIndex = 8;
             checkout.Text = "Thanh toán";
+            checkout.Click += checkout_Click;
             // 
             // panel4
             // 
