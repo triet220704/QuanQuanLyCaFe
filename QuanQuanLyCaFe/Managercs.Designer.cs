@@ -97,8 +97,10 @@
             // 
             // lsvBill
             // 
+            lsvBill.BackColor = Color.Bisque;
             lsvBill.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
             lsvBill.Enabled = false;
+            lsvBill.Font = new Font("Arial", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lsvBill.GridLines = true;
             lsvBill.Location = new Point(521, 185);
             lsvBill.Name = "lsvBill";
