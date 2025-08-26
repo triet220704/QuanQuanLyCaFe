@@ -91,9 +91,8 @@ namespace QuanQuanLyCaFe
 
         private void Exit_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
-            Login login = new Login();
-            login.ShowDialog();
+            
+            
             this.Close();
         }
     }

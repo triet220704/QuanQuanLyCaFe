@@ -53,13 +53,13 @@ namespace QuanQuanLyCaFe.DAO
 
         public bool UpdateAccount(string name, string displayName, int type)
         {
-            string query = string.Format("UPDATE Account SET  DisplayName = n'{1}', Type = {2} WHERE UserName = N'{0}'", name, displayName, type);
+            string query = string.Format("UPDATE Account SET  DisplayName = N'{1}', Type = {2} WHERE UserName = N'{0}'", name, displayName, type);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
         public bool DeleteAccount(string name)
         {            
-            string query = string.Format("Delete Food Where UserName = {0} ", name);
+            string query = string.Format("Delete Account Where UserName = N'{0}' ", name);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }

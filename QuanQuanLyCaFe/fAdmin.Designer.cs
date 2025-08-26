@@ -114,10 +114,10 @@
             btnAccount.FillColor = Color.SandyBrown;
             btnAccount.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAccount.ForeColor = Color.White;
-            btnAccount.Location = new Point(913, 6);
+            btnAccount.Location = new Point(915, 6);
             btnAccount.Name = "btnAccount";
             btnAccount.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnAccount.Size = new Size(159, 44);
+            btnAccount.Size = new Size(165, 44);
             btnAccount.TabIndex = 4;
             btnAccount.Text = "Tài Khoản";
             btnAccount.Click += btnAccount_Click;
@@ -134,10 +134,10 @@
             btnTable.FillColor = Color.SandyBrown;
             btnTable.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnTable.ForeColor = Color.White;
-            btnTable.Location = new Point(716, 6);
+            btnTable.Location = new Point(701, 6);
             btnTable.Name = "btnTable";
             btnTable.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnTable.Size = new Size(144, 44);
+            btnTable.Size = new Size(164, 44);
             btnTable.TabIndex = 3;
             btnTable.Text = "Bàn Ăn";
             btnTable.Click += btnTable_Click;
@@ -154,10 +154,10 @@
             btnFoodeCategory.FillColor = Color.SandyBrown;
             btnFoodeCategory.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnFoodeCategory.ForeColor = Color.White;
-            btnFoodeCategory.Location = new Point(494, 6);
+            btnFoodeCategory.Location = new Point(465, 6);
             btnFoodeCategory.Name = "btnFoodeCategory";
             btnFoodeCategory.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btnFoodeCategory.Size = new Size(146, 44);
+            btnFoodeCategory.Size = new Size(175, 44);
             btnFoodeCategory.TabIndex = 2;
             btnFoodeCategory.Text = "Danh Mục";
             btnFoodeCategory.Click += btnFoodeCategory_Click;
@@ -174,10 +174,10 @@
             btnFood.FillColor = Color.SandyBrown;
             btnFood.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnFood.ForeColor = Color.White;
-            btnFood.Location = new Point(239, 6);
+            btnFood.Location = new Point(245, 7);
             btnFood.Name = "btnFood";
             btnFood.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            btnFood.Size = new Size(147, 44);
+            btnFood.Size = new Size(158, 44);
             btnFood.TabIndex = 1;
             btnFood.Text = "Thức Ăn";
             btnFood.Click += btnFood_Click;
@@ -197,9 +197,9 @@
             btnBill.Location = new Point(39, 6);
             btnBill.Name = "btnBill";
             btnBill.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            btnBill.Size = new Size(144, 44);
+            btnBill.Size = new Size(155, 44);
             btnBill.TabIndex = 0;
-            btnBill.Text = "Danh Thu";
+            btnBill.Text = "Doanh Thu";
             btnBill.Click += btnBill_Click;
             // 
             // panel2

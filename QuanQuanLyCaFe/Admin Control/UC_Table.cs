@@ -53,7 +53,7 @@ namespace QuanQuanLyCaFe.Admin_Control
             LoadTable();
         }
 
-        void EditTable(int id, string name )
+        void EditTable(int id, string name)
         {
             if (TableDAO.Instance.UpdateTableFood(id, name))
             {
@@ -87,13 +87,13 @@ namespace QuanQuanLyCaFe.Admin_Control
             AddTable(id, name);
         }
 
-       
+
 
         private void btnEditTable_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(tbTableid.Text);
             string name = tbNameTable.Text;
-           
+
             EditTable(id, name);
         }
 
@@ -101,6 +101,11 @@ namespace QuanQuanLyCaFe.Admin_Control
         {
             int id = Convert.ToInt32(tbTableid.Text);
             DeleteTable(id);
+        }
+
+        private void dgvTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

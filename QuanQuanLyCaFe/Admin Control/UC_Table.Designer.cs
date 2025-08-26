@@ -289,6 +289,7 @@
             dgvTable.ThemeStyle.RowsStyle.Height = 29;
             dgvTable.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvTable.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvTable.CellContentClick += dgvTable_CellContentClick;
             // 
             // guna2Elipse1
             // 
