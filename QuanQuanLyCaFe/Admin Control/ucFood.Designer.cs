@@ -94,7 +94,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgvFood.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgvFood.ColumnHeadersHeight = 4;
+            dgvFood.ColumnHeadersHeight = 30;
             dgvFood.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
@@ -123,7 +123,7 @@
             dgvFood.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
             dgvFood.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             dgvFood.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvFood.ThemeStyle.HeaderStyle.Height = 4;
+            dgvFood.ThemeStyle.HeaderStyle.Height = 30;
             dgvFood.ThemeStyle.ReadOnly = false;
             dgvFood.ThemeStyle.RowsStyle.BackColor = Color.White;
             dgvFood.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -172,6 +172,7 @@
             btnSearchFood.Size = new Size(133, 38);
             btnSearchFood.TabIndex = 3;
             btnSearchFood.Text = "Tìm";
+            btnSearchFood.Click += btnSearchFood_Click;
             // 
             // panel5
             // 
@@ -207,6 +208,7 @@
             btnShowFood.Size = new Size(133, 38);
             btnShowFood.TabIndex = 14;
             btnShowFood.Text = "Xem";
+            btnShowFood.Click += btnShowFood_Click;
             // 
             // btnEditFood
             // 
@@ -248,6 +250,7 @@
             btnDeleteFood.Size = new Size(133, 38);
             btnDeleteFood.TabIndex = 12;
             btnDeleteFood.Text = "Xóa";
+            btnDeleteFood.Click += btnDeleteFood_Click;
             // 
             // btnAddFood
             // 
@@ -268,6 +271,7 @@
             btnAddFood.Size = new Size(133, 38);
             btnAddFood.TabIndex = 11;
             btnAddFood.Text = "Thêm";
+            btnAddFood.Click += btnAddFood_Click;
             // 
             // panel10
             // 
@@ -404,6 +408,7 @@
             tbFoodid.ShadowDecoration.CustomizableEdges = customizableEdges20;
             tbFoodid.Size = new Size(240, 36);
             tbFoodid.TabIndex = 3;
+            tbFoodid.TextChanged += tbFoodid_TextChanged;
             // 
             // label5
             // 

@@ -95,6 +95,7 @@
             btnShowTable.Size = new Size(133, 38);
             btnShowTable.TabIndex = 14;
             btnShowTable.Text = "Xem";
+            btnShowTable.Click += btnShowTable_Click;
             // 
             // btnEditTable
             // 
@@ -115,6 +116,7 @@
             btnEditTable.Size = new Size(133, 38);
             btnEditTable.TabIndex = 13;
             btnEditTable.Text = "Sửa";
+            btnEditTable.Click += btnEditTable_Click;
             // 
             // btnDeleteTable
             // 
@@ -135,6 +137,7 @@
             btnDeleteTable.Size = new Size(133, 38);
             btnDeleteTable.TabIndex = 12;
             btnDeleteTable.Text = "Xóa";
+            btnDeleteTable.Click += btnDeleteTable_Click;
             // 
             // btnAddTable
             // 
@@ -155,6 +158,7 @@
             btnAddTable.Size = new Size(133, 38);
             btnAddTable.TabIndex = 11;
             btnAddTable.Text = "Thêm";
+            btnAddTable.Click += btnAddTable_Click;
             // 
             // panel8
             // 
@@ -247,7 +251,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgvTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgvTable.ColumnHeadersHeight = 4;
+            dgvTable.ColumnHeadersHeight = 30;
             dgvTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
@@ -276,7 +280,7 @@
             dgvTable.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
             dgvTable.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             dgvTable.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvTable.ThemeStyle.HeaderStyle.Height = 4;
+            dgvTable.ThemeStyle.HeaderStyle.Height = 30;
             dgvTable.ThemeStyle.ReadOnly = false;
             dgvTable.ThemeStyle.RowsStyle.BackColor = Color.White;
             dgvTable.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -299,6 +303,7 @@
             Controls.Add(dgvTable);
             Name = "UC_Table";
             Size = new Size(1149, 547);
+            Load += UC_Table_Load;
             panel5.ResumeLayout(false);
             panel8.ResumeLayout(false);
             panel8.PerformLayout();

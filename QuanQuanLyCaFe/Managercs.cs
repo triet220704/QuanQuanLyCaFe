@@ -21,14 +21,27 @@ namespace QuanQuanLyCaFe
 {
     public partial class Managercs : Form
     {
-
-        public Managercs()
+        private Account loginAccount;
+        public Account LoginAccount
+        {
+            get { return loginAccount; }
+            set { loginAccount = value; ChangeAccount(loginAccount.Type); }
+        }
+        public Managercs(Account acc)
         {
             InitializeComponent();
+            this.LoginAccount = acc;
             LoadTable();
             LoadCategory();
+            LoadComboboxTable(cbSwitchTable);
+
         }
         #region Method
+        void ChangeAccount(int type)
+        {
+            quảnLíToolStripMenuItem.Enabled = type == 1;
+            thôngTinTàiKhoảnToolStripMenuItem.Text += " (" + LoginAccount.DisplayName + ")";
+        }
         void LoadCategory()
         {
             List<Category> listCategory = CategoryDAO.Instance.GetListCategory();
@@ -85,7 +98,12 @@ namespace QuanQuanLyCaFe
             // Thread.CurrentThread.CurrentCulture = culture;
 
             txbTotalPrice.Text = totalPrice.ToString("c", culture);
-            
+
+        }
+        void LoadComboboxTable(ComboBox cb)
+        {
+            cb.DataSource = TableDAO.Instance.LoadTableList();
+            cb.DisplayMember = "Name";
         }
 
 
@@ -118,15 +136,16 @@ namespace QuanQuanLyCaFe
 
         private void quảnLíToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fAdmin f = new fAdmin();
+            fAdmin f = new fAdmin();       
             f.ShowDialog();
         }
 
         private void thôngTinCáNhânToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            fAccountProfile f = new fAccountProfile();
+            fAccountProfile f = new fAccountProfile(LoginAccount);        
             f.ShowDialog();
         }
+       
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -154,6 +173,9 @@ namespace QuanQuanLyCaFe
 
         private void đăngXuấtToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
+            this.Hide(); // Ẩn form hiện tại (Managercs hoặc form chính)
+            Login login = new Login(); // Tạo form đăng nhập
+            login.ShowDialog(); // Hiển thị form đăng nhập (chờ người dùng đăng nhập lại)
             this.Close();
         }
 
@@ -202,20 +224,44 @@ namespace QuanQuanLyCaFe
         }
         private void checkout_Click(object sender, EventArgs e)
         {
-            Table table = lsvBill.Tag as Table ;
+            Table table = lsvBill.Tag as Table;
             int idBill = BillDAO.Instance.GetUncheckBillByTableID(table.ID);
+            int discount = (int)nprDiscount.Value;
+            // double totalPrice = Convert.ToDouble(txbTotalPrice.Text.Split(',')[0]);
+            CultureInfo culture = new CultureInfo("vi-VN");
+            double totalPrice = double.Parse(txbTotalPrice.Text, NumberStyles.Currency, culture);
+
+            double finalTotaPrice = totalPrice - (totalPrice / 100) * discount;
             if (idBill != -1)
             {
-                if (MessageBox.Show("Bạn có chắc thanh toán hóa đơn cho bàn"+table.Name,"Thông báo",MessageBoxButtons.OKCancel)== System.Windows.Forms.DialogResult.OK)
+                if (MessageBox.Show(string.Format(culture,"Bạn có chắc thanh toán hóa đơn cho bàn {0}\nTổng tiền: {1:c} - Giảm giá {2}% = {3:c}", table.Name, totalPrice, discount, finalTotaPrice), "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
                 {
-                   BillDAO.Instance.CheckOut(idBill);
+
+                    BillDAO.Instance.CheckOut(idBill, discount, (float)finalTotaPrice);
                     SHOWBill(table.ID);
                     LoadTable();
-                }    
+                }
             }
         }
+        private void btnSwitchTable_Click(object sender, EventArgs e)
+        {
+            int id1 = (lsvBill.Tag as Table).ID;
+            int id2 = (cbSwitchTable.SelectedItem as Table).ID;
+            if (MessageBox.Show(string.Format("Bạn có thật muốn chuyển bàn {0} qua bàn {1}", (lsvBill.Tag as Table).Name, (cbSwitchTable.SelectedItem as Table).Name), "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            {
+                TableDAO.Instance.SwitchTable(id1, id2);
+                LoadTable();
+            }
+
+        }
+
         #endregion
 
 
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

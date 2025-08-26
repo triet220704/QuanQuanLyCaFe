@@ -232,6 +232,7 @@
             btnSwitchTable.Size = new Size(136, 38);
             btnSwitchTable.TabIndex = 12;
             btnSwitchTable.Text = "Chuyển bàn";
+            btnSwitchTable.Click += btnSwitchTable_Click;
             // 
             // checkout
             // 
@@ -433,6 +434,7 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(1055, 36);
             panel5.TabIndex = 7;
+            panel5.Paint += panel5_Paint;
             // 
             // Managercs
             // 

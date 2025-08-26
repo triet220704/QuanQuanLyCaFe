@@ -1,4 +1,5 @@
 ﻿using QuanQuanLyCaFe.DAO;
+using QuanQuanLyCaFe.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,30 +18,23 @@ namespace QuanQuanLyCaFe
         {
             InitializeComponent();
             
-        }
-       
-        
-            
-
-           
-        
+        }      
+      
         private void fAdmin_Load(object sender, EventArgs e)
         {
             uC_Bill1.Visible = false;
             ucFood1.Visible = false;
             uC_FoodCategory1.Visible = false;
             ucFood1.Visible = false;
-            uC_Account1.Visible = false;
-            uC_Spending1.Visible = false;
-            uC_Warehouse1.Visible = false;
+            uC_Account1.Visible = false;        
             btnBill.PerformClick();
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            /*this.Hide();
             Managercs manager = new Managercs();
-            manager.ShowDialog();
+            manager.ShowDialog();*/
             this.Close();
         }
 
@@ -92,6 +86,7 @@ namespace QuanQuanLyCaFe
             panelMoving.Left = btnAccount.Left + 30;
             uC_Account1.Visible = true;
             uC_Account1.BringToFront();
+            
         }
 
         private void uC_Account1_Load(object sender, EventArgs e)
@@ -99,18 +94,7 @@ namespace QuanQuanLyCaFe
 
         }
 
-        private void guna2Button1_Click_1(object sender, EventArgs e)
-        {
-            panelMoving.Left = btnSp.Left + 30;
-            uC_Spending1.Visible = true;
-            uC_Spending1.BringToFront();
-        }
-
-        private void btnWarehouse_Click(object sender, EventArgs e)
-        {
-            panelMoving.Left = btnWarehouse.Left + 30;
-            uC_Warehouse1.Visible = true;
-            uC_Warehouse1.BringToFront();
-        }
+    
+       
     }
 }

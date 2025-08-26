@@ -67,12 +67,12 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgvBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgvBill.ColumnHeadersHeight = 4;
+            dgvBill.ColumnHeadersHeight = 30;
             dgvBill.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(64, 64, 64);
             dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
@@ -91,12 +91,12 @@
             dgvBill.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
             dgvBill.ThemeStyle.BackColor = Color.White;
             dgvBill.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
-            dgvBill.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            dgvBill.ThemeStyle.HeaderStyle.BackColor = Color.SandyBrown;
             dgvBill.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
             dgvBill.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
             dgvBill.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             dgvBill.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvBill.ThemeStyle.HeaderStyle.Height = 4;
+            dgvBill.ThemeStyle.HeaderStyle.Height = 30;
             dgvBill.ThemeStyle.ReadOnly = false;
             dgvBill.ThemeStyle.RowsStyle.BackColor = Color.White;
             dgvBill.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -105,6 +105,7 @@
             dgvBill.ThemeStyle.RowsStyle.Height = 29;
             dgvBill.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvBill.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvBill.CellContentClick += dgvBill_CellContentClick;
             // 
             // panel1
             // 
@@ -115,6 +116,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1124, 71);
             panel1.TabIndex = 4;
+            panel1.Paint += panel1_Paint;
             // 
             // btnView
             // 
@@ -135,6 +137,7 @@
             btnView.Size = new Size(173, 38);
             btnView.TabIndex = 2;
             btnView.Text = "Thông Kê";
+            btnView.Click += btnView_Click;
             // 
             // dtpTodate
             // 
@@ -149,7 +152,7 @@
             dtpTodate.ShadowDecoration.CustomizableEdges = customizableEdges4;
             dtpTodate.Size = new Size(262, 38);
             dtpTodate.TabIndex = 1;
-            dtpTodate.Value = new DateTime(2025, 5, 26, 22, 39, 25, 206);
+            dtpTodate.Value = new DateTime(2025, 8, 12, 0, 0, 0, 0);
             // 
             // dtpFromDate
             // 
@@ -164,7 +167,7 @@
             dtpFromDate.ShadowDecoration.CustomizableEdges = customizableEdges6;
             dtpFromDate.Size = new Size(262, 38);
             dtpFromDate.TabIndex = 0;
-            dtpFromDate.Value = new DateTime(2025, 5, 26, 22, 39, 25, 206);
+            dtpFromDate.Value = new DateTime(2025, 8, 12, 0, 0, 0, 0);
             // 
             // UC_Bill
             // 

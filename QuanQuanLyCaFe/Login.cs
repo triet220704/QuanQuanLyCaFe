@@ -1,4 +1,5 @@
 ﻿using QuanQuanLyCaFe.DAO;
+using QuanQuanLyCaFe.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -56,7 +57,8 @@ namespace QuanQuanLyCaFe
             string passWord = TxtPassWord.Text;
             if (login(userName, passWord))
             {
-                Managercs f = new Managercs();
+                Account loginAccount = AccountDAO.Instance.GetAccountByUserName(userName);
+                Managercs f = new Managercs(loginAccount);
                 this.Hide();
                 f.ShowDialog();
                 //this.Show();
@@ -78,6 +80,19 @@ namespace QuanQuanLyCaFe
         private void Login_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            
+            if (checkBox1.Checked)
+            {
+                TxtPassWord.UseSystemPasswordChar = false;
+            }
+            else 
+            {
+                TxtPassWord.UseSystemPasswordChar = true;
+            }
         }
     }
 }

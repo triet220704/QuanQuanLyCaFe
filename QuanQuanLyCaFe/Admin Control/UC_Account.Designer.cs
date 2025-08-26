@@ -51,7 +51,7 @@
             panel5 = new Panel();
             btnResetPassword = new Guna.UI2.WinForms.Guna2Button();
             panel25 = new Panel();
-            cbAccountType = new Guna.UI2.WinForms.Guna2ComboBox();
+            nprAcount = new Guna.UI2.WinForms.Guna2NumericUpDown();
             label11 = new Label();
             btnAccountShow = new Guna.UI2.WinForms.Guna2Button();
             btnAccountEdit = new Guna.UI2.WinForms.Guna2Button();
@@ -67,6 +67,7 @@
             dgvAccount = new Guna.UI2.WinForms.Guna2DataGridView();
             panel5.SuspendLayout();
             panel25.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nprAcount).BeginInit();
             panel8.SuspendLayout();
             panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvAccount).BeginInit();
@@ -105,32 +106,32 @@
             btnResetPassword.Size = new Size(141, 57);
             btnResetPassword.TabIndex = 16;
             btnResetPassword.Text = "Đặt lại mặt khẩu";
+            btnResetPassword.Click += btnResetPassword_Click;
             // 
             // panel25
             // 
-            panel25.Controls.Add(cbAccountType);
+            panel25.Controls.Add(nprAcount);
             panel25.Controls.Add(label11);
             panel25.Location = new Point(7, 153);
             panel25.Name = "panel25";
             panel25.Size = new Size(433, 69);
             panel25.TabIndex = 15;
             // 
-            // cbAccountType
+            // nprAcount
             // 
-            cbAccountType.BackColor = Color.Transparent;
-            cbAccountType.CustomizableEdges = customizableEdges3;
-            cbAccountType.DrawMode = DrawMode.OwnerDrawFixed;
-            cbAccountType.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbAccountType.FocusedColor = Color.FromArgb(94, 148, 255);
-            cbAccountType.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cbAccountType.Font = new Font("Segoe UI", 10F);
-            cbAccountType.ForeColor = Color.FromArgb(68, 88, 112);
-            cbAccountType.ItemHeight = 30;
-            cbAccountType.Location = new Point(174, 16);
-            cbAccountType.Name = "cbAccountType";
-            cbAccountType.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            cbAccountType.Size = new Size(245, 36);
-            cbAccountType.TabIndex = 3;
+            nprAcount.BackColor = Color.Transparent;
+            nprAcount.CustomizableEdges = customizableEdges3;
+            nprAcount.Font = new Font("Segoe UI", 9F);
+            nprAcount.Location = new Point(186, 12);
+            nprAcount.Margin = new Padding(3, 4, 3, 4);
+            nprAcount.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            nprAcount.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            nprAcount.Name = "nprAcount";
+            nprAcount.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            nprAcount.Size = new Size(79, 34);
+            nprAcount.TabIndex = 3;
+            nprAcount.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            nprAcount.ValueChanged += guna2NumericUpDown1_ValueChanged;
             // 
             // label11
             // 
@@ -161,6 +162,7 @@
             btnAccountShow.Size = new Size(133, 38);
             btnAccountShow.TabIndex = 14;
             btnAccountShow.Text = "Xem";
+            btnAccountShow.Click += btnAccountShow_Click;
             // 
             // btnAccountEdit
             // 
@@ -181,6 +183,7 @@
             btnAccountEdit.Size = new Size(133, 38);
             btnAccountEdit.TabIndex = 13;
             btnAccountEdit.Text = "Sửa";
+            btnAccountEdit.Click += btnAccountEdit_Click;
             // 
             // btnAccountDelete
             // 
@@ -201,6 +204,7 @@
             btnAccountDelete.Size = new Size(133, 38);
             btnAccountDelete.TabIndex = 12;
             btnAccountDelete.Text = "Xóa";
+            btnAccountDelete.Click += btnAccountDelete_Click;
             // 
             // btnAccountAdd
             // 
@@ -221,6 +225,7 @@
             btnAccountAdd.Size = new Size(133, 38);
             btnAccountAdd.TabIndex = 11;
             btnAccountAdd.Text = "Thêm";
+            btnAccountAdd.Click += btnAccountAdd_Click;
             // 
             // panel8
             // 
@@ -285,7 +290,6 @@
             tbAccountUsername.Margin = new Padding(3, 4, 3, 4);
             tbAccountUsername.Name = "tbAccountUsername";
             tbAccountUsername.PlaceholderText = "";
-            tbAccountUsername.ReadOnly = true;
             tbAccountUsername.SelectedText = "";
             tbAccountUsername.ShadowDecoration.CustomizableEdges = customizableEdges16;
             tbAccountUsername.Size = new Size(248, 36);
@@ -373,6 +377,7 @@
             panel5.ResumeLayout(false);
             panel25.ResumeLayout(false);
             panel25.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nprAcount).EndInit();
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
             panel7.ResumeLayout(false);
@@ -395,10 +400,10 @@
         private Guna.UI2.WinForms.Guna2TextBox tbAccountUsername;
         private Label label5;
         private Panel panel25;
-        private Guna.UI2.WinForms.Guna2ComboBox cbAccountType;
         private Label label11;
         private Guna.UI2.WinForms.Guna2Button btnResetPassword;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2DataGridView dgvAccount;
+        private Guna.UI2.WinForms.Guna2NumericUpDown nprAcount;
     }
 }

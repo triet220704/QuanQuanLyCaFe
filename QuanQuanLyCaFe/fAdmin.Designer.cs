@@ -42,27 +42,19 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnExit = new Guna.UI2.WinForms.Guna2Button();
             panel1 = new Panel();
-            btnWarehouse = new Guna.UI2.WinForms.Guna2Button();
-            btnSp = new Guna.UI2.WinForms.Guna2Button();
             btnAccount = new Guna.UI2.WinForms.Guna2Button();
             btnTable = new Guna.UI2.WinForms.Guna2Button();
             btnFoodeCategory = new Guna.UI2.WinForms.Guna2Button();
             btnFood = new Guna.UI2.WinForms.Guna2Button();
             btnBill = new Guna.UI2.WinForms.Guna2Button();
             panel2 = new Panel();
-            uC_Warehouse1 = new Admin_Control.UC_Warehouse();
-            uC_Spending1 = new Admin_Control.UC_Spending();
-            uC_Account1 = new Admin_Control.UC_Account();
-            uC_Table1 = new Admin_Control.UC_Table();
-            uC_FoodCategory1 = new Admin_Control.UC_FoodCategory();
-            ucFood1 = new Admin_Control.ucFood();
-            uC_Bill1 = new Admin_Control.UC_Bill();
+            uC_Account1 = new QuanQuanLyCaFe.Admin_Control.UC_Account();
+            uC_Table1 = new QuanQuanLyCaFe.Admin_Control.UC_Table();
+            uC_FoodCategory1 = new QuanQuanLyCaFe.Admin_Control.UC_FoodCategory();
+            ucFood1 = new QuanQuanLyCaFe.Admin_Control.ucFood();
+            uC_Bill1 = new QuanQuanLyCaFe.Admin_Control.UC_Bill();
             panelMoving = new Panel();
             guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(components);
@@ -100,8 +92,6 @@
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.Fixed3D;
-            panel1.Controls.Add(btnWarehouse);
-            panel1.Controls.Add(btnSp);
             panel1.Controls.Add(btnAccount);
             panel1.Controls.Add(btnTable);
             panel1.Controls.Add(btnFoodeCategory);
@@ -112,51 +102,11 @@
             panel1.Size = new Size(1131, 59);
             panel1.TabIndex = 3;
             // 
-            // btnWarehouse
-            // 
-            btnWarehouse.BackColor = Color.SeaShell;
-            btnWarehouse.BorderRadius = 18;
-            btnWarehouse.CustomizableEdges = customizableEdges3;
-            btnWarehouse.DisabledState.BorderColor = Color.DarkGray;
-            btnWarehouse.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnWarehouse.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnWarehouse.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnWarehouse.FillColor = Color.SandyBrown;
-            btnWarehouse.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnWarehouse.ForeColor = Color.White;
-            btnWarehouse.Location = new Point(955, 4);
-            btnWarehouse.Name = "btnWarehouse";
-            btnWarehouse.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnWarehouse.Size = new Size(159, 44);
-            btnWarehouse.TabIndex = 6;
-            btnWarehouse.Text = "Kho";
-            btnWarehouse.Click += btnWarehouse_Click;
-            // 
-            // btnSp
-            // 
-            btnSp.BackColor = Color.SeaShell;
-            btnSp.BorderRadius = 18;
-            btnSp.CustomizableEdges = customizableEdges5;
-            btnSp.DisabledState.BorderColor = Color.DarkGray;
-            btnSp.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnSp.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnSp.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnSp.FillColor = Color.SandyBrown;
-            btnSp.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSp.ForeColor = Color.White;
-            btnSp.Location = new Point(797, 5);
-            btnSp.Name = "btnSp";
-            btnSp.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnSp.Size = new Size(151, 44);
-            btnSp.TabIndex = 5;
-            btnSp.Text = "Chi Tiêu";
-            btnSp.Click += guna2Button1_Click_1;
-            // 
             // btnAccount
             // 
             btnAccount.BackColor = Color.SeaShell;
             btnAccount.BorderRadius = 18;
-            btnAccount.CustomizableEdges = customizableEdges7;
+            btnAccount.CustomizableEdges = customizableEdges3;
             btnAccount.DisabledState.BorderColor = Color.DarkGray;
             btnAccount.DisabledState.CustomBorderColor = Color.DarkGray;
             btnAccount.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -164,9 +114,9 @@
             btnAccount.FillColor = Color.SandyBrown;
             btnAccount.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAccount.ForeColor = Color.White;
-            btnAccount.Location = new Point(630, 4);
+            btnAccount.Location = new Point(913, 6);
             btnAccount.Name = "btnAccount";
-            btnAccount.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnAccount.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnAccount.Size = new Size(159, 44);
             btnAccount.TabIndex = 4;
             btnAccount.Text = "Tài Khoản";
@@ -176,7 +126,7 @@
             // 
             btnTable.BackColor = Color.SeaShell;
             btnTable.BorderRadius = 18;
-            btnTable.CustomizableEdges = customizableEdges9;
+            btnTable.CustomizableEdges = customizableEdges5;
             btnTable.DisabledState.BorderColor = Color.DarkGray;
             btnTable.DisabledState.CustomBorderColor = Color.DarkGray;
             btnTable.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -184,9 +134,9 @@
             btnTable.FillColor = Color.SandyBrown;
             btnTable.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnTable.ForeColor = Color.White;
-            btnTable.Location = new Point(478, 5);
+            btnTable.Location = new Point(716, 6);
             btnTable.Name = "btnTable";
-            btnTable.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnTable.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnTable.Size = new Size(144, 44);
             btnTable.TabIndex = 3;
             btnTable.Text = "Bàn Ăn";
@@ -196,7 +146,7 @@
             // 
             btnFoodeCategory.BackColor = Color.SeaShell;
             btnFoodeCategory.BorderRadius = 18;
-            btnFoodeCategory.CustomizableEdges = customizableEdges11;
+            btnFoodeCategory.CustomizableEdges = customizableEdges7;
             btnFoodeCategory.DisabledState.BorderColor = Color.DarkGray;
             btnFoodeCategory.DisabledState.CustomBorderColor = Color.DarkGray;
             btnFoodeCategory.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -204,9 +154,9 @@
             btnFoodeCategory.FillColor = Color.SandyBrown;
             btnFoodeCategory.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnFoodeCategory.ForeColor = Color.White;
-            btnFoodeCategory.Location = new Point(323, 6);
+            btnFoodeCategory.Location = new Point(494, 6);
             btnFoodeCategory.Name = "btnFoodeCategory";
-            btnFoodeCategory.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnFoodeCategory.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnFoodeCategory.Size = new Size(146, 44);
             btnFoodeCategory.TabIndex = 2;
             btnFoodeCategory.Text = "Danh Mục";
@@ -216,7 +166,7 @@
             // 
             btnFood.BackColor = Color.SeaShell;
             btnFood.BorderRadius = 18;
-            btnFood.CustomizableEdges = customizableEdges13;
+            btnFood.CustomizableEdges = customizableEdges9;
             btnFood.DisabledState.BorderColor = Color.DarkGray;
             btnFood.DisabledState.CustomBorderColor = Color.DarkGray;
             btnFood.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -224,9 +174,9 @@
             btnFood.FillColor = Color.SandyBrown;
             btnFood.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnFood.ForeColor = Color.White;
-            btnFood.Location = new Point(163, 6);
+            btnFood.Location = new Point(239, 6);
             btnFood.Name = "btnFood";
-            btnFood.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btnFood.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnFood.Size = new Size(147, 44);
             btnFood.TabIndex = 1;
             btnFood.Text = "Thức Ăn";
@@ -236,7 +186,7 @@
             // 
             btnBill.BackColor = Color.SeaShell;
             btnBill.BorderRadius = 18;
-            btnBill.CustomizableEdges = customizableEdges15;
+            btnBill.CustomizableEdges = customizableEdges11;
             btnBill.DisabledState.BorderColor = Color.DarkGray;
             btnBill.DisabledState.CustomBorderColor = Color.DarkGray;
             btnBill.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -244,9 +194,9 @@
             btnBill.FillColor = Color.SandyBrown;
             btnBill.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnBill.ForeColor = Color.White;
-            btnBill.Location = new Point(8, 6);
+            btnBill.Location = new Point(39, 6);
             btnBill.Name = "btnBill";
-            btnBill.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btnBill.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnBill.Size = new Size(144, 44);
             btnBill.TabIndex = 0;
             btnBill.Text = "Danh Thu";
@@ -255,8 +205,6 @@
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(uC_Warehouse1);
-            panel2.Controls.Add(uC_Spending1);
             panel2.Controls.Add(uC_Account1);
             panel2.Controls.Add(uC_Table1);
             panel2.Controls.Add(uC_FoodCategory1);
@@ -266,20 +214,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1131, 566);
             panel2.TabIndex = 4;
-            // 
-            // uC_Warehouse1
-            // 
-            uC_Warehouse1.Location = new Point(3, -1);
-            uC_Warehouse1.Name = "uC_Warehouse1";
-            uC_Warehouse1.Size = new Size(1127, 562);
-            uC_Warehouse1.TabIndex = 6;
-            // 
-            // uC_Spending1
-            // 
-            uC_Spending1.Location = new Point(3, -1);
-            uC_Spending1.Name = "uC_Spending1";
-            uC_Spending1.Size = new Size(1127, 562);
-            uC_Spending1.TabIndex = 5;
             // 
             // uC_Account1
             // 
@@ -346,7 +280,7 @@
             panel3.Controls.Add(btnExit);
             panel3.Location = new Point(-1, -2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1184, 61);
+            panel3.Size = new Size(1181, 61);
             panel3.TabIndex = 7;
             // 
             // label1
@@ -409,8 +343,6 @@
         private Panel panelMoving;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
-        private Guna.UI2.WinForms.Guna2Button btnWarehouse;
-        private Guna.UI2.WinForms.Guna2Button btnSp;
         private Admin_Control.UC_Bill uC_Bill1;
         private Admin_Control.ucFood ucFood1;
         private Admin_Control.UC_FoodCategory uC_FoodCategory1;
@@ -422,8 +354,6 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse5;
         private Admin_Control.UC_Account uC_Account1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse6;
-        private Admin_Control.UC_Spending uC_Spending1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse7;
-        private Admin_Control.UC_Warehouse uC_Warehouse1;
     }
 }

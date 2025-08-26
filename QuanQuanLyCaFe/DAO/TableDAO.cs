@@ -23,7 +23,14 @@ namespace QuanQuanLyCaFe.DAO
         public static int TableWidth = 110;
         public static int TableHeight = 110;
         private TableDAO() { }
-
+        public void SwitchTable(int id1, int id2)
+        {
+            DataProvider.Instance.ExecuteQuery("USP_SwitchTable @idTable1 , @idTable2", new object[] { id1, id2 });
+        }
+        public DataTable GetListTable()
+        {
+            return DataProvider.Instance.ExecuteQuery("Select * from TableFood");
+        }
         public List<Table> LoadTableList()
         {
             List<Table> tablelist = new List<Table>();
@@ -38,5 +45,26 @@ namespace QuanQuanLyCaFe.DAO
 
             return tablelist;
         }
+        public bool InsertTableFood(int id, string name)
+        {
+            string query = string.Format("INSERT INTO TableFood (name) VALUES (N'{0}')", name);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+
+        public bool UpdateTableFood(int id, string name)
+        {
+            string query = string.Format("UPDATE TableFood SET name = N'{0}' WHERE id = {2}", name, id);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+
+        public bool DeleteTableFood(int id)
+        {
+            string query = string.Format("DELETE FROM TableFood WHERE id = {0}", id );
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+
     }
 }

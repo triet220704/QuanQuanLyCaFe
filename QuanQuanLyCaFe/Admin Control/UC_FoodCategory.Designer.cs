@@ -82,6 +82,7 @@
             btnCategoruEdit.Size = new Size(133, 38);
             btnCategoruEdit.TabIndex = 13;
             btnCategoruEdit.Text = "Sửa";
+            btnCategoruEdit.Click += btnCategoruEdit_Click;
             // 
             // btnCategoruAdd
             // 
@@ -102,6 +103,7 @@
             btnCategoruAdd.Size = new Size(133, 38);
             btnCategoruAdd.TabIndex = 11;
             btnCategoruAdd.Text = "Thêm";
+            btnCategoruAdd.Click += btnCategoruAdd_Click;
             // 
             // panel5
             // 
@@ -136,6 +138,7 @@
             btnCategoruShow.Size = new Size(133, 38);
             btnCategoruShow.TabIndex = 14;
             btnCategoruShow.Text = "Xem";
+            btnCategoruShow.Click += btnCategoruShow_Click;
             // 
             // btnCategoruDelete
             // 
@@ -156,6 +159,7 @@
             btnCategoruDelete.Size = new Size(133, 38);
             btnCategoruDelete.TabIndex = 12;
             btnCategoruDelete.Text = "Xóa";
+            btnCategoruDelete.Click += btnCategoruDelete_Click;
             // 
             // panel8
             // 
@@ -247,7 +251,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgvCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgvCategory.ColumnHeadersHeight = 4;
+            dgvCategory.ColumnHeadersHeight = 30;
             dgvCategory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
@@ -276,7 +280,7 @@
             dgvCategory.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
             dgvCategory.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             dgvCategory.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvCategory.ThemeStyle.HeaderStyle.Height = 4;
+            dgvCategory.ThemeStyle.HeaderStyle.Height = 30;
             dgvCategory.ThemeStyle.ReadOnly = false;
             dgvCategory.ThemeStyle.RowsStyle.BackColor = Color.White;
             dgvCategory.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;

@@ -39,12 +39,9 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fAccountProfile));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel2 = new Panel();
             tbUserName = new Guna.UI2.WinForms.Guna2TextBox();
             label1 = new Label();
@@ -61,7 +58,6 @@
             tbEnterPassword = new Guna.UI2.WinForms.Guna2TextBox();
             label5 = new Label();
             panel6 = new Panel();
-            btnExit = new Guna.UI2.WinForms.Guna2Button();
             label6 = new Label();
             Exit = new Guna.UI2.WinForms.Guna2Button();
             btnUpdate = new Guna.UI2.WinForms.Guna2Button();
@@ -272,31 +268,11 @@
             // panel6
             // 
             panel6.BackColor = Color.SandyBrown;
-            panel6.Controls.Add(btnExit);
             panel6.Controls.Add(label6);
             panel6.Location = new Point(-1, 0);
             panel6.Name = "panel6";
             panel6.Size = new Size(518, 59);
             panel6.TabIndex = 9;
-            // 
-            // btnExit
-            // 
-            btnExit.CustomizableEdges = customizableEdges11;
-            btnExit.DisabledState.BorderColor = Color.DarkGray;
-            btnExit.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnExit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnExit.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnExit.FillColor = Color.SandyBrown;
-            btnExit.Font = new Font("Segoe UI", 9F);
-            btnExit.ForeColor = Color.White;
-            btnExit.Image = (Image)resources.GetObject("btnExit.Image");
-            btnExit.ImageSize = new Size(30, 30);
-            btnExit.Location = new Point(488, 2);
-            btnExit.Name = "btnExit";
-            btnExit.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            btnExit.Size = new Size(32, 27);
-            btnExit.TabIndex = 4;
-            btnExit.Click += btnExit_Click;
             // 
             // label6
             // 
@@ -313,7 +289,7 @@
             Exit.BorderRadius = 18;
             Exit.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
             Exit.BorderThickness = 1;
-            Exit.CustomizableEdges = customizableEdges13;
+            Exit.CustomizableEdges = customizableEdges11;
             Exit.DisabledState.BorderColor = Color.DarkGray;
             Exit.DisabledState.CustomBorderColor = Color.DarkGray;
             Exit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -323,17 +299,18 @@
             Exit.ForeColor = Color.White;
             Exit.Location = new Point(354, 435);
             Exit.Name = "Exit";
-            Exit.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            Exit.ShadowDecoration.CustomizableEdges = customizableEdges12;
             Exit.Size = new Size(133, 38);
             Exit.TabIndex = 12;
             Exit.Text = "Thoát";
+            Exit.Click += Exit_Click_1;
             // 
             // btnUpdate
             // 
             btnUpdate.BorderRadius = 18;
             btnUpdate.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
             btnUpdate.BorderThickness = 1;
-            btnUpdate.CustomizableEdges = customizableEdges15;
+            btnUpdate.CustomizableEdges = customizableEdges13;
             btnUpdate.DisabledState.BorderColor = Color.DarkGray;
             btnUpdate.DisabledState.CustomBorderColor = Color.DarkGray;
             btnUpdate.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -343,10 +320,11 @@
             btnUpdate.ForeColor = Color.White;
             btnUpdate.Location = new Point(215, 435);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btnUpdate.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btnUpdate.Size = new Size(133, 38);
             btnUpdate.TabIndex = 13;
             btnUpdate.Text = "Cập nhật";
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // fAccountProfile
             // 
@@ -366,6 +344,7 @@
             Name = "fAccountProfile";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Thông tin cá nhân";
+            Load += fAccountProfile_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel1.ResumeLayout(false);
@@ -395,7 +374,6 @@
         private Label label5;
         private Panel panel6;
         private Label label6;
-        private Guna.UI2.WinForms.Guna2Button btnExit;
         private Guna.UI2.WinForms.Guna2TextBox tbUserName;
         private Guna.UI2.WinForms.Guna2TextBox tbDisplayName;
         private Guna.UI2.WinForms.Guna2TextBox tbPassword;
